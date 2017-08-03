@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Life of Elements</title>
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+		<style>
+			body {
+				background: #F6E3CE;
+				color: #ffffff;
+				font-family: sans-serif;
+				font-weight: bold;
+				margin: 0;
+			}
+			#elcon {
+				background: #F5A9A9;
+				border: none;
+				border-radius: 5px;
+				padding: 10px 10px 10px 10px;
+				width: 80%;
+				text-align: center;
+				margin-right: auto;
+				margin-left: auto;
+				font-size: 20px;
+			}
+			#daters {
+				margin-top: 20px;
+				color: #252525;
+				font-size: 30px;
+				text-align: center;
+			}
+			#search {
+				background: #F5A9A9;
+				color: #ffffff;font-family: sans-serif;
+				font-weight: bold;
+				font-size: 20px;
+				border: none;
+				padding: 6px 6px 6px 6px;
+				border-radius: 6px;
+			}
+			#loe {
+				background: #ffffff;
+				position: fixed;
+				top: 0;
+				width: 100%;
+				color: #848484;
+				font-size: 30px;
+				padding: 10px;
+				box-shadow: 0px 2px 10px #888888;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="loe">
+			Life of Elements
+		</div>
+		<br><br><br>
+		<div id="daters">
+			<span id="datem"><strong></strong></span><span><strong>月</strong></span><span id="datej"><strong></strong></span><span><strong>日</strong></span><br><br>
+			<span>今日の元素</span>
+		</div>
+		<div id="elcon">
+			<span id="el"></span><br>
+			<span id="jl"></span><br>
+			<span id="ll"></span><br>
+			<span id="ml"></span><br>
+			<span id="tl"></span>
+		</div>
+		<div id="daters">
+			<span>この元素に関わりのあることを知ろう！</span><br>
+			<button id="search" onclick="src()">この元素について調べる</button>
+		</div>
+		<script>
+			var d = new Date();
+			document.getElementById("datej").innerHTML = d.getDate();
+			document.getElementById("datem").innerHTML = d.getMonth() + 1;
+			var es = d.getDate();
+			if(es == 1) {
+				var el = "H";
+				var jl = "水素";
+				var ll = "Hydrogen";
+				var ml = 1.008;
+				var tl = "g";
+			}
+			if(es == 2) {
+				var el = "He";
+				var jl = "ヘリウム";
+				var ll = "Helium";
+				var ml = 4.003;
+				var tl = "g";
+			}
+			if(es == 3) {
+				var el = "Li";
+				var jl = "リチウム";
+				var ll = "Lithium";
+				var ml = 6.941;
+				var tl = "s";
+			}
+			if(es == 4) {
+				var el = "Be";
+				var jl = "ベリリウム";
+				var ll = "Beryllium";
+				var ml = 9.012;
+				var tl = "s";
+			}
+			if(es == 5) {
+				var el = "B";
+				var jl = "ホウ素";
+				var ll = "Boron";
+				var ml = 10.81;
+				var tl = "s";
+			}
+			if(es == 6) {
+				var el = "C";
+				var jl = "炭素";
+				var ll = "Carbon";
+				var ml = 12.01;
+				var tl = "s";
+			}
+			if(es == 7) {
+				var el = "N";
+				var jl = "窒素";
+				var ll = "Nitrogen";
+				var ml = 14.01;
+				var tl = "g";
+			}
+			document.getElementById("el").innerHTML = el;
+			document.getElementById("jl").innerHTML = jl;
+			document.getElementById("ll").innerHTML = ll;
+			document.getElementById("ml").innerHTML = ml;
+			if(tl == "g") {
+				document.getElementById("elcon").style.background = "#F5A9A9";
+			}
+			if(tl == "s") {
+				document.getElementById("elcon").style.background = "#848484";
+			}
+			function src() {
+				var jl =  document.getElementById("jl").innerHTML;
+				window.open("https://scholar.google.co.jp/scholar?hl=ja&q=" + jl + "&btnG=&lr=lang_en%7Clang_ja");
+			}
+		</script>
+	</body>
+</html>
